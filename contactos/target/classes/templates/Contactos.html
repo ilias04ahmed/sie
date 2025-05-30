@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Lista de Contactos</title>
+</head>
+<body>
+ <h1>Lista de Contactos</h1>
+ <form action="/contactos/guardar" method="post">
+ <input type="text" name="nombre" placeholder="Nombre" required>
+ <input type="text" name="telefono" placeholder="Teléfono" required>
+ <input type="email" name="email" placeholder="Email" required>
+ <button type="submit">Guardar</button>
+ </form>
+ <ul>
+ <li th:each="contacto : ${contactos}">
+ <span th:text="${contacto.nombre}"></span> -
+ <span th:text="${contacto.telefono}"></span> -
+ <span th:text="${contacto.email}"></span>
+ <a th:href="@{/contactos/eliminar/{id}(id=${contacto.id})}">Eliminar</a>
+ </li>
+ </ul>
+</body>
+</html>
