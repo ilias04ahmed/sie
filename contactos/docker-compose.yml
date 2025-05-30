@@ -15,7 +15,7 @@ services:
     depends_on:
       - db
     ports:
-      - "9955:9955"
+      - "9988:9988"
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/contactosdb
       SPRING_DATASOURCE_USERNAME: user
